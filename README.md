@@ -14,7 +14,8 @@ Spit out battery/charging stats<br>
 `/sys/class/power_supply/axp20x-battery/uevent`
 
 Calculate wattage<br>
-```read V < /sys/class/power_supply/axp20x-battery/voltage_now
+```
+read V < /sys/class/power_supply/axp20x-battery/voltage_now
 read I < /sys/class/power_supply/axp20x-battery/current_now
 printf -v P %0.2f $((V*I))e-12
 printf "Voltage: %0.2fV, Current:, %0.2fA, Wattage: %0.2fW\n" $((V))e-6 $((I))e-6 $P
