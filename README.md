@@ -34,5 +34,3 @@ Switch governor of both cluters to conservative<br>
 
 Get available frequencies and governors<br>
 `grep . /sys/devices/system/cpu/cpufreq/policy?/*avail*`
-
-Spit out
