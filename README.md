@@ -10,6 +10,15 @@ Possibly cleaner version of brightness up with no external commands<br>
 Possibly cleaner version of brightness down with no external commands<br>
 `bl="/sys/class/backlight/backlight@0/brightness"; read br < $bl; echo $(((br-1)*9/10+1)) > $bl`
 
+Spit out battery/charging stats<br>
+`/sys/class/power_supply/axp20x-battery/uevent`
+
+Calculate wattage<br>
+`read V < /sys/class/power_supply/axp20x-battery/voltage_now
+read I < /sys/class/power_supply/axp20x-battery/current_now
+printf -v P %0.2f $((V*I))e-12
+printf "Voltage: %0.2fV, Current:, %0.2fA, Wattage: %0.2fW\n" $((V))e-6 $((I))e-6 $P`
+
 Change suspend mode to s2idle<br>
 `tee /sys/power/state <<< s2idle`
 
@@ -24,3 +33,5 @@ Switch governor of both cluters to conservative<br>
 
 Get available frequencies and governors<br>
 `grep . /sys/devices/system/cpu/cpufreq/policy?/*avail*`
+
+Spit out
