@@ -30,7 +30,7 @@ Turn off all cores except core "0"<br>
 Turn on all cores<br>
 `tee /sys/devices/system/cpu/cpu?/online <<< 1`
 
-Switch governor of both cluters to conservative<br>
+Switch governor of both clusters to conservative<br>
 `tee /sys/devices/system/cpu/cpufreq/policy?/scaling_governor <<< conservative`
 
 Get available frequencies and governors<br>
