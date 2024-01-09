@@ -11,7 +11,7 @@ Cleaner version of brightness down with no external commands<br>
 `bl="/sys/class/backlight/backlight@0/brightness"; read br < $bl; echo $(((br-1)*9/10+1)) > $bl`
 
 Spit out battery/charging stats<br>
-`/sys/class/power_supply/axp20x-battery/uevent`
+`cat /sys/class/power_supply/axp20x-battery/uevent`
 
 Calculate wattage<br>
 ```
